@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'mainscreen.dart';
 import 'signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -32,36 +33,10 @@ class homePage extends StatelessWidget {
 
     // TODO: implement build
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           textTheme: GoogleFonts.firaSansTextTheme(), colorScheme: appLook),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Food Waste App DSC",
-            textAlign: TextAlign.center,
-          ),
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-                "Use These to Navigate to pages that you have chosen to work on, we will integrate them as we go"),
-            ElevatedButton(onPressed: () {}, child: Text("Sign Up Page")),
-            SizedBox(
-              height: 10.0,
-            ),
-            ElevatedButton(onPressed: () {}, child: Text("Search Page")),
-            SizedBox(
-              height: 10.0,
-            ),
-            ElevatedButton(onPressed: () {}, child: Text("Order Page")),
-            SizedBox(
-              height: 10.0,
-            ),
-            ElevatedButton(onPressed: () {}, child: Text("Update Menu Page")),
-          ],
-        ),
-      ),
+      home: MainScreen()
     );
 
     throw UnimplementedError();
