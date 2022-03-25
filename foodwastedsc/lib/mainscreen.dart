@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'order.dart';
+import 'editmenu.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -34,7 +35,11 @@ class MainScreen extends StatelessWidget {
             SizedBox(
               height: 10.0,
             ),
-            ElevatedButton(onPressed: () {}, child: Text("Update Menu Page")),
+            ElevatedButton(onPressed: () {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context)=>editmenu())
+              );
+            }, child: Text("Update Menu Page")),
           ],
         ),
       );
