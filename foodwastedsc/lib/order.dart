@@ -180,6 +180,7 @@ class GeneratedOrderPageWidget extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(0, 10, 20, 0),
                   width: 570.0,
                   child: new TextField(
+                    keyboardType: TextInputType.datetime,
                     decoration: InputDecoration(
                       labelText: "Time of Arrival: *",
                       labelStyle: TextStyle(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'dart:html';
@@ -109,6 +110,7 @@ class SignUpPageWidget extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(0, 10, 20, 0),
                   width: 570.0,
                   child: new TextField(
+                    keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
                       labelText: "Business Phone Number: *",
                       labelStyle: TextStyle(
@@ -128,8 +130,31 @@ class SignUpPageWidget extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(0, 20, 20, 0),
                   width: 570,
                   child: new TextField(
+                    keyboardType: TextInputType.streetAddress,
+                    textCapitalization: TextCapitalization.words,
                     decoration: InputDecoration(
                       labelText: "Business Address: *",
+                      labelStyle: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontFamily: 'FiraSans',
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      border: InputBorder.none,
+                      fillColor: Color.fromRGBO(218, 226, 230, 1.0),
+                      filled: true,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(0, 20, 20, 0),
+                  width: 570,
+                  child: new TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      labelText: "Password For Account *",
+                      hintText: "Make sure this is strong!",
                       labelStyle: TextStyle(
                         decoration: TextDecoration.none,
                         fontFamily: 'FiraSans',
