@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'signup.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,7 +12,7 @@ class GeneratedOrderPageWidget extends StatelessWidget {
       child: new Column(
         children: [
           Container(
-            alignment: Alignment.topRight ,
+            alignment: Alignment.topRight,
             height: 500.0,
             width: 640.0,
             decoration: BoxDecoration(
@@ -29,20 +31,20 @@ class GeneratedOrderPageWidget extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(0, 10, 20, 0),
                   alignment: Alignment(-0.9, 0.2),
                   child: new Text(
-            'Menu',
-              textAlign: TextAlign.right,
-              style: new TextStyle(
-                decoration: TextDecoration.none,
-                fontFamily: 'FiraSans',
-                fontSize: 35.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+                    'Menu',
+                    textAlign: TextAlign.right,
+                    style: new TextStyle(
+                      decoration: TextDecoration.none,
+                      fontFamily: 'FiraSans',
+                      fontSize: 35.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
                   ),
-                ),
                 ),
                 Container(
                   padding: const EdgeInsets.fromLTRB(0, 10, 20, 0),
-                  alignment: Alignment(-0.68,0.2),
+                  alignment: Alignment(-0.68, 0.2),
                   child: new Text(
                     'Choose the item(s) you would like and number of servings for each.',
                     style: TextStyle(
@@ -56,7 +58,7 @@ class GeneratedOrderPageWidget extends StatelessWidget {
                 ),
                 Container(
                   padding: const EdgeInsets.fromLTRB(0, 30, 20, 0),
-                  alignment: Alignment(-0.85,0.2),
+                  alignment: Alignment(-0.85, 0.2),
                   child: new Text(
                     'Item:                                                    Quantity:',
                     style: TextStyle(
@@ -73,7 +75,7 @@ class GeneratedOrderPageWidget extends StatelessWidget {
                   indent: 27,
                   endIndent: 27,
                 ),
-        ],
+              ],
             ),
           ),
         ],
@@ -84,7 +86,7 @@ class GeneratedOrderPageWidget extends StatelessWidget {
       child: new Column(
         children: [
           Container(
-            alignment: Alignment.topLeft ,
+            alignment: Alignment.topLeft,
             height: 500.0,
             width: 640.0,
             decoration: BoxDecoration(
@@ -101,7 +103,7 @@ class GeneratedOrderPageWidget extends StatelessWidget {
               children: [
                 Container(
                   padding: const EdgeInsets.fromLTRB(20, 25, 20, 0),
-                  alignment: Alignment(-0.9,0.2),
+                  alignment: Alignment(-0.9, 0.2),
                   child: new Text(
                     'Customer Information',
                     textAlign: TextAlign.left,
@@ -116,7 +118,7 @@ class GeneratedOrderPageWidget extends StatelessWidget {
                 ),
                 Container(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-                  alignment: Alignment(-0.9,0.2),
+                  alignment: Alignment(-0.9, 0.2),
                   child: new Text(
                     'Enter your details to have food reserved for you.',
                     style: TextStyle(
@@ -158,6 +160,22 @@ class GeneratedOrderPageWidget extends StatelessWidget {
                     width: 15.0,
                   ),
                 ),
+                // new GestureDetector(
+                //   onTap: () {
+                //     showTimePicker(
+                //       context: context,
+                //       initialTime: TimeOfDay(hour: 7, minute: 0),
+                //       initialEntryMode: TimePickerEntryMode.input,
+                //       confirmText: "CONFIRM",
+                //       cancelText: "NOT NOW",
+                //       helpText: "BOOKING TIME",
+                //     );
+                //   },
+                //   child: new Text(
+                //     "SELECT TIME",
+                //     style: TextStyle(fontWeight: FontWeight.bold),
+                //   ),
+                // ),
                 Container(
                   padding: const EdgeInsets.fromLTRB(0, 10, 20, 0),
                   width: 570.0,
@@ -201,7 +219,7 @@ class GeneratedOrderPageWidget extends StatelessWidget {
           ),
         ],
       ),
-        );
+    );
     final bottomSection = new Expanded(
       child: new Row(
         children: [
@@ -227,8 +245,7 @@ class GeneratedOrderPageWidget extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
-              )
-          ),
+              )),
           Container(
             padding: const EdgeInsets.fromLTRB(0, 10, 20, 0),
             alignment: Alignment(-0.81, 0.2),
@@ -254,4 +271,3 @@ class GeneratedOrderPageWidget extends StatelessWidget {
     );
   }
 }
-
