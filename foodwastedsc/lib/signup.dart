@@ -8,9 +8,20 @@ import 'package:flutter/material.dart';
 import 'signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'editmenu.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpPageWidget extends StatelessWidget {
   @override
+  bool _passgood = false;
+  final _oop = TextEditingController();
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController passController = new TextEditingController();
+  TextEditingController addController = new TextEditingController();
+  TextEditingController nameController = new TextEditingController();
+  TextEditingController phoneController = new TextEditingController();
+
   Widget build(BuildContext context) {
     final centerBox = new Expanded(
       child: new Column(
@@ -69,6 +80,7 @@ class SignUpPageWidget extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(0, 25, 20, 0),
                   width: 570.0,
                   child: new TextField(
+                    controller: nameController,
                     decoration: InputDecoration(
                       labelText: "Business Name: *",
                       labelStyle: TextStyle(
@@ -110,6 +122,7 @@ class SignUpPageWidget extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(0, 10, 20, 0),
                   width: 570.0,
                   child: new TextField(
+                    controller: phoneController,
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
                       labelText: "Business Phone Number: *",
@@ -127,9 +140,30 @@ class SignUpPageWidget extends StatelessWidget {
                   ),
                 ),
                 Container(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 20, 0),
+                  width: 570.0,
+                  child: new TextField(
+                    controller: emailController,
+                    decoration: InputDecoration(
+                      labelText: "Preffered Email: *",
+                      labelStyle: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontFamily: 'FiraSans',
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      border: InputBorder.none,
+                      fillColor: Color.fromRGBO(218, 226, 230, 1.0),
+                      filled: true,
+                    ),
+                  ),
+                ),
+                Container(
                   padding: const EdgeInsets.fromLTRB(0, 20, 20, 0),
                   width: 570,
                   child: new TextField(
+                    controller: addController,
                     keyboardType: TextInputType.streetAddress,
                     textCapitalization: TextCapitalization.words,
                     decoration: InputDecoration(
@@ -151,6 +185,7 @@ class SignUpPageWidget extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(0, 20, 20, 0),
                   width: 570,
                   child: new TextField(
+                    controller: passController,
                     obscureText: true,
                     decoration: InputDecoration(
                       labelText: "Password For Account *",
@@ -168,14 +203,29 @@ class SignUpPageWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.all(10)),
+                Padding(padding: EdgeInsets.all(5)),
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(
                     backgroundColor: Colors.blueAccent,
                     minimumSize: Size(100, 50),
                     padding: EdgeInsets.all(10),
                   ),
-                  onPressed: () {},
+                  onPressed: () async{
+                    try {
+                      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                        email: emailController.text,
+                        password: passController.text,
+                      );
+                    } on FirebaseAuthException catch (e) {
+                      if (e.code == 'weak-password') {
+                        print('The password provided is too weak.');
+                      } else if (e.code == 'email-already-in-use') {
+                        print('The account already exists for that email.');
+                      }
+                    } catch (e) {
+                      print(e);
+                    }
+                  },
                   child: Text('SIGN UP'),
                 )
               ],
