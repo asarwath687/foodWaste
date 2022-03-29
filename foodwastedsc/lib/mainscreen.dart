@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodwastedsc/signup.dart';
 import 'order.dart';
 import 'editmenu.dart';
+import 'search.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -31,7 +32,14 @@ class MainScreen extends StatelessWidget {
           SizedBox(
             height: 10.0,
           ),
-          ElevatedButton(onPressed: () {}, child: Text("Search Page")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                    MaterialPageRoute(
+                      builder: (context) => SearchMap()));
+              },
+              child: Text("Search Page")),
           SizedBox(
             height: 10.0,
           ),

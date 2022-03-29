@@ -4,6 +4,9 @@
         android:label="foodwastedsc"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyCns3bDfYJI_d9pp2BeUUqJP7xS8UdZjNY"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
