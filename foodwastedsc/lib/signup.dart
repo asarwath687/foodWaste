@@ -23,6 +23,18 @@ class SignUpPageWidget extends StatelessWidget {
   TextEditingController phoneController = new TextEditingController();
 
   Widget build(BuildContext context) {
+    MaterialBanner myBanner = new MaterialBanner(
+        content: Text("Your Business has been Signed Up"),
+        backgroundColor: Colors.blueAccent.shade100,
+        actions: [
+          TextButton(
+              child: Text("Take me to Edit Order Page"),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => editmenu()));
+                ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
+              }),
+        ]);
     final centerBox = new Expanded(
       child: new Column(
         children: [
@@ -210,9 +222,11 @@ class SignUpPageWidget extends StatelessWidget {
                     minimumSize: Size(100, 50),
                     padding: EdgeInsets.all(10),
                   ),
-                  onPressed: () async{
+                  onPressed: () async {
                     try {
-                      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                      UserCredential userCredential = await FirebaseAuth
+                          .instance
+                          .createUserWithEmailAndPassword(
                         email: emailController.text,
                         password: passController.text,
                       );
@@ -225,6 +239,7 @@ class SignUpPageWidget extends StatelessWidget {
                     } catch (e) {
                       print(e);
                     }
+                    ScaffoldMessenger.of(context).showMaterialBanner(myBanner);
                   },
                   child: Text('SIGN UP'),
                 )
