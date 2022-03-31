@@ -34,10 +34,8 @@ class MainScreen extends StatelessWidget {
           ),
           ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                    MaterialPageRoute(
-                      builder: (context) => SearchMap()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SearchMap()));
               },
               child: Text("Search Page")),
           SizedBox(

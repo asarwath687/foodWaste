@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:foodwastedsc/signup.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import 'editmenu.dart';
+import 'order.dart';
 
 class SearchMap extends StatelessWidget {
   @override
@@ -15,6 +18,7 @@ class SearchMap extends StatelessWidget {
     );
   }
 }
+
 class MapScreen extends StatefulWidget {
   @override
   _MapScreenState createState() => _MapScreenState();
@@ -32,31 +36,71 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GoogleMap(
-        myLocationButtonEnabled: false,
-        zoomControlsEnabled: false,
-        initialCameraPosition: _initialCameraPosition,
+    return Stack(
+      children: [
+        GoogleMap(
+          myLocationButtonEnabled: false,
+          zoomControlsEnabled: false,
+          initialCameraPosition: _initialCameraPosition,
 
-        markers: getmarkers(), //markers to show on map
-        mapType: MapType.normal, //map type
-        onMapCreated: (controller) { //method called when map is created
-          setState(() {
-            mapController = controller;
-
-          });
-        },
-      ), //
-
+          markers: getmarkers(), //markers to show on map
+          mapType: MapType.normal, //map type
+          onMapCreated: (controller) {
+            //method called when map is created
+            setState(() {
+              mapController = controller;
+            });
+          },
+        ),
+        Positioned(
+          top: 50,
+          right: 50,
+          child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => SignUpPageWidget()));
+              },
+              child: Text("Create Profile")),
+        ),
+        Positioned(
+          top: 50,
+          left: 50,
+          child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => GeneratedOrderPageWidget()));
+              },
+              child: Text("Order Food")),
+        ),
+        Positioned(
+          bottom: 50,
+          left: 50,
+          child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => editmenu()));
+              },
+              child: Text("Edit Profile")),
+        ),
+      ], //
     );
   }
+
   //making markers :)
-  Set<Marker> getmarkers() { //markers to place on map
+  Set<Marker> getmarkers() {
+    //markers to place on map
     setState(() {
-      markers.add(Marker( //add first marker
-        markerId: MarkerId( showLocation.toString()),
-        position: LatLng(36.97634868399694, -122.02688761806836) , //position of marker
-        infoWindow: InfoWindow( //popup info
+      markers.add(Marker(
+        //add first marker
+        markerId: MarkerId(showLocation.toString()),
+        position:
+            LatLng(36.97634868399694, -122.02688761806836), //position of marker
+        infoWindow: InfoWindow(
+          //popup info
           title: 'Poke House',
           //snippet: 'My Custom Subtitle',
         ),
@@ -64,7 +108,44 @@ class _MapScreenState extends State<MapScreen> {
       ));
     });
     return markers;
+
+    // return Scaffold(
+
+    // body: GoogleMap(
+    //       myLocationButtonEnabled: false,
+    //       zoomControlsEnabled: false,
+    //       initialCameraPosition: _initialCameraPosition,
+
+    //       markers: getmarkers(), //markers to show on map
+    //       mapType: MapType.normal, //map type
+    //       onMapCreated: (controller) {
+    //         //method called when map is created
+    //         setState(() {
+    //           mapController = controller;
+    //         });
+    //       },
+    //     ), //
+    //   );
+    // }
+
+    // //making markers :)
+    // Set<Marker> getmarkers() {
+    //   //markers to place on map
+    //   setState(() {
+    //     markers.add(Marker(
+    //       //add first marker
+    //       markerId: MarkerId(showLocation.toString()),
+    //       position:
+    //           LatLng(36.97634868399694, -122.02688761806836), //position of marker
+    //       infoWindow: InfoWindow(
+    //         //popup info
+    //         title: 'Poke House',
+    //         //snippet: 'My Custom Subtitle',
+    //       ),
+    //       icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+    //     ));
+    //   });
+    //   return markers;
+    //}
   }
 }
-
-

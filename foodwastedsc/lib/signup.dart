@@ -157,7 +157,7 @@ class SignUpPageWidget extends StatelessWidget {
                   child: new TextField(
                     controller: emailController,
                     decoration: InputDecoration(
-                      labelText: "Preffered Email: *",
+                      labelText: "Preferred Email: *",
                       labelStyle: TextStyle(
                         decoration: TextDecoration.none,
                         fontFamily: 'FiraSans',

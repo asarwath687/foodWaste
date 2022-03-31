@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodwastedsc/search.dart';
 import 'mainscreen.dart';
 import 'signup.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,9 +19,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   FirebaseAuth auth = FirebaseAuth.instance;
-  FirebaseAuth.instance
-  .userChanges()
-  .listen((User? user) {
+  FirebaseAuth.instance.userChanges().listen((User? user) {
     if (user == null) {
       print('User is currently signed out!');
     } else {
@@ -51,10 +50,13 @@ class homePage extends StatelessWidget {
 
     // TODO: implement build
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-            textTheme: GoogleFonts.firaSansTextTheme(), colorScheme: appLook),
-        home: MainScreen());
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          textTheme: GoogleFonts.firaSansTextTheme(), colorScheme: appLook),
+      home: Scaffold(
+        body: SearchMap(),
+      ),
+    );
 
     throw UnimplementedError();
   }
