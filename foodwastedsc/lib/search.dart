@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodwastedsc/profilePage.dart';
 import 'package:foodwastedsc/signup.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -69,18 +70,6 @@ class _MapScreenState extends State<MapScreen> {
           left: 50,
           child: ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => GeneratedOrderPageWidget()));
-              },
-              child: Text("Order Food")),
-        ),
-        Positioned(
-          bottom: 50,
-          left: 50,
-          child: ElevatedButton(
-              onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => editmenu()));
               },
@@ -102,6 +91,10 @@ class _MapScreenState extends State<MapScreen> {
         infoWindow: InfoWindow(
           //popup info
           title: 'Poke House',
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => profilePage()));
+          },
           //snippet: 'My Custom Subtitle',
         ),
         icon: BitmapDescriptor.defaultMarker, //Icon for Marker
