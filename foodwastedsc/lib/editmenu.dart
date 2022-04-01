@@ -1,16 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:foodwastedsc/profilePage.dart';
 import 'signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'order.dart';
 
-class editmenu extends StatelessWidget {
+class editmenu extends StatefulWidget {
+  @override
+  _editmenuState createState() => _editmenuState();
+}
+
+class _editmenuState extends State<editmenu> {
+  final Map<String, int> dataMap = {
+    'Number 1': 1,
+    'Number 2': 2,
+    'Number 3': 3,
+    'Number 4': 4,
+    'Number 5': 5,
+  };
+
+  // String item1;
+  // String item2;
+  // String item3;
+  // String item4;
+  // String item5;
+
+  // int quan1;
+  // int quan2;
+  // int quan3;
+  // int quan4;
+  // int quan5;
+
   @override
   Widget build(BuildContext context) {
-    void storeText(String text) {
-      String _textString = '';
-      text = _textString;
-    }
-
     final rightBox = new Expanded(
       child: new Column(
         children: [
@@ -92,9 +113,215 @@ class editmenu extends StatelessWidget {
                             const EdgeInsets.fromLTRB(43.0, 10.0, 0.0, 10.0),
                         width: 200.0,
                         child: new TextField(
-                          onChanged: (text) {
-                            storeText(text);
-                          },
+                          // onChanged: (val) => item1 = val,
+                          decoration: InputDecoration(
+                            labelText: "Item: ",
+                            labelStyle: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'FiraSans',
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                            border: InputBorder.none,
+                            fillColor: Color.fromRGBO(218, 226, 230, 1.0),
+                            filled: true,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding:
+                            const EdgeInsets.fromLTRB(39.0, 10.0, 0.0, 10.0),
+                        width: 200.0,
+                        child: new TextField(
+                          decoration: InputDecoration(
+                            labelText: "Quantity: ",
+                            labelStyle: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'FiraSans',
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                            border: InputBorder.none,
+                            fillColor: Color.fromRGBO(218, 226, 230, 1.0),
+                            filled: true,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: new SizedBox(
+                    width: 15.0,
+                  ),
+                ),
+                Container(
+                  child: new Row(
+                    children: [
+                      Container(
+                        padding:
+                            const EdgeInsets.fromLTRB(43.0, 10.0, 0.0, 10.0),
+                        width: 200.0,
+                        child: new TextField(
+                          // onChanged: (val) => item1 = val,
+                          decoration: InputDecoration(
+                            labelText: "Item: ",
+                            labelStyle: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'FiraSans',
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                            border: InputBorder.none,
+                            fillColor: Color.fromRGBO(218, 226, 230, 1.0),
+                            filled: true,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding:
+                            const EdgeInsets.fromLTRB(39.0, 10.0, 0.0, 10.0),
+                        width: 200.0,
+                        child: new TextField(
+                          decoration: InputDecoration(
+                            labelText: "Quantity: ",
+                            labelStyle: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'FiraSans',
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                            border: InputBorder.none,
+                            fillColor: Color.fromRGBO(218, 226, 230, 1.0),
+                            filled: true,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: new SizedBox(
+                    width: 15.0,
+                  ),
+                ),
+                Container(
+                  child: new Row(
+                    children: [
+                      Container(
+                        padding:
+                            const EdgeInsets.fromLTRB(43.0, 10.0, 0.0, 10.0),
+                        width: 200.0,
+                        child: new TextField(
+                          // onChanged: (val) => item1 = val,
+                          decoration: InputDecoration(
+                            labelText: "Item: ",
+                            labelStyle: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'FiraSans',
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                            border: InputBorder.none,
+                            fillColor: Color.fromRGBO(218, 226, 230, 1.0),
+                            filled: true,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding:
+                            const EdgeInsets.fromLTRB(39.0, 10.0, 0.0, 10.0),
+                        width: 200.0,
+                        child: new TextField(
+                          decoration: InputDecoration(
+                            labelText: "Quantity: ",
+                            labelStyle: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'FiraSans',
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                            border: InputBorder.none,
+                            fillColor: Color.fromRGBO(218, 226, 230, 1.0),
+                            filled: true,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: new SizedBox(
+                    width: 15.0,
+                  ),
+                ),
+                Container(
+                  child: new Row(
+                    children: [
+                      Container(
+                        padding:
+                            const EdgeInsets.fromLTRB(43.0, 10.0, 0.0, 10.0),
+                        width: 200.0,
+                        child: new TextField(
+                          // onChanged: (val) => item1 = val,
+                          decoration: InputDecoration(
+                            labelText: "Item: ",
+                            labelStyle: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'FiraSans',
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                            border: InputBorder.none,
+                            fillColor: Color.fromRGBO(218, 226, 230, 1.0),
+                            filled: true,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding:
+                            const EdgeInsets.fromLTRB(39.0, 10.0, 0.0, 10.0),
+                        width: 200.0,
+                        child: new TextField(
+                          decoration: InputDecoration(
+                            labelText: "Quantity: ",
+                            labelStyle: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'FiraSans',
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                            border: InputBorder.none,
+                            fillColor: Color.fromRGBO(218, 226, 230, 1.0),
+                            filled: true,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: new SizedBox(
+                    width: 15.0,
+                  ),
+                ),
+                Container(
+                  child: new Row(
+                    children: [
+                      Container(
+                        padding:
+                            const EdgeInsets.fromLTRB(43.0, 10.0, 0.0, 10.0),
+                        width: 200.0,
+                        child: new TextField(
+                          // onChanged: (val) => item1 = val,
                           decoration: InputDecoration(
                             labelText: "Item: ",
                             labelStyle: TextStyle(
@@ -345,7 +572,19 @@ class editmenu extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => GeneratedOrderPageWidget()));
+                        builder: (context) => profilePage(
+                            // item1: item1;
+                            // final String item2;
+                            // final String item3;
+                            // final String item4;
+                            // final String item5;
+
+                            // final int quan1;
+                            // final int quan2;
+                            // final int quan3;
+                            // final int quan4;
+                            // final int quan5;
+                            )));
               },
             ),
           ),
