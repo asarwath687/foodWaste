@@ -1,11 +1,26 @@
 import 'dart:html';
+import 'dart:js_util';
 
 import 'package:flutter/material.dart';
+import 'package:foodwastedsc/profilePage.dart';
 import 'signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'editmenu.dart';
+import 'profilePage.dart';
 
 class GeneratedOrderPageWidget extends StatelessWidget {
+  // final String item1;
+  // final String item2;
+  // final String item3;
+  // final String item4;
+  // final String item5;
+
+  // final int quan1;
+  // final int quan2;
+  // final int quan3;
+  // final int quan4;
+  // final int quan5;
+
   @override
   Widget build(BuildContext context) {
     final rightBox = new Expanded(
@@ -74,6 +89,101 @@ class GeneratedOrderPageWidget extends StatelessWidget {
                   color: Colors.grey,
                   indent: 27,
                   endIndent: 27,
+                ),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(30, 10, 0, 10),
+                  alignment: Alignment(-0.78, 0.2),
+                  child: Text(
+                    'Salmon                                     15 Servings',
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      fontFamily: 'FiraSans',
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Divider(
+                  color: Colors.grey,
+                  indent: 1000,
+                  endIndent: 162,
+                ),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(30, 10, 0, 10),
+                  alignment: Alignment(-0.78, 0.2),
+                  child: Text(
+                    'Chicken                                     13 Servings',
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      fontFamily: 'FiraSans',
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Divider(
+                  color: Colors.grey,
+                  indent: 1000,
+                  endIndent: 162,
+                ),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(30, 10, 0, 10),
+                  alignment: Alignment(-0.78, 0.2),
+                  child: Text(
+                    'Tuna                                          12 Servings',
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      fontFamily: 'FiraSans',
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Divider(
+                  color: Colors.grey,
+                  indent: 1000,
+                  endIndent: 162,
+                ),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(30, 10, 0, 10),
+                  alignment: Alignment(-0.78, 0.2),
+                  child: Text(
+                    'White Rice                                 11 Servings',
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      fontFamily: 'FiraSans',
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Divider(
+                  color: Colors.grey,
+                  indent: 1000,
+                  endIndent: 162,
+                ),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(30, 10, 0, 10),
+                  alignment: Alignment(-0.78, 0.2),
+                  child: Text(
+                    'Brown Rice                                13 Servings',
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      fontFamily: 'FiraSans',
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Divider(
+                  color: Colors.grey,
+                  indent: 1000,
+                  endIndent: 162,
                 ),
               ],
             ),
@@ -267,6 +377,40 @@ class GeneratedOrderPageWidget extends StatelessWidget {
             endIndent: 100,
           ),
           bottomSection,
+          Container(
+            alignment: Alignment(0.9, -0.6),
+            padding: const EdgeInsets.fromLTRB(0, 10, 20, 0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(250, 70),
+                primary: Colors.white,
+                onPrimary: Colors.black,
+                textStyle: TextStyle(
+                  fontSize: 15.0,
+                  fontFamily: 'FiraSans',
+                ),
+              ),
+              child: Text("Submit"),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => profilePage(
+                            // item1: item1;
+                            // final String item2;
+                            // final String item3;
+                            // final String item4;
+                            // final String item5;
+
+                            // final int quan1;
+                            // final int quan2;
+                            // final int quan3;
+                            // final int quan4;
+                            // final int quan5;
+                            )));
+              },
+            ),
+          ),
         ],
       ),
     );
