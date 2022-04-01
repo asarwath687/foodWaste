@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'signup.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'order.dart';
 
 class editmenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    void storeText(String text) {
+      String _textString = '';
+      text = _textString;
+    }
 
     final rightBox = new Expanded(
       child: new Column(
         children: [
           Container(
-            alignment: Alignment.topRight ,
-            height: 500.0,
+            alignment: Alignment.topRight,
+            height: 530.0,
             width: 640.0,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -24,6 +29,7 @@ class editmenu extends StatelessWidget {
               ],
             ),
             child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   padding: const EdgeInsets.fromLTRB(20, 20, 25, 0),
@@ -42,7 +48,7 @@ class editmenu extends StatelessWidget {
                 ),
                 Container(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-                  alignment: Alignment(-0.8,0.2),
+                  alignment: Alignment(-0.8, 0.2),
                   child: new Text(
                     'Edit what item(s) your business has available today.',
                     style: TextStyle(
@@ -56,7 +62,7 @@ class editmenu extends StatelessWidget {
                 ),
                 Container(
                   padding: const EdgeInsets.fromLTRB(0, 30, 20, 0),
-                  alignment: Alignment(-0.77,0.2),
+                  alignment: Alignment(-0.77, 0.2),
                   child: new Text(
                     'Item:                                                    Quantity:',
                     style: TextStyle(
@@ -79,22 +85,52 @@ class editmenu extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.fromLTRB(0, 25, 20, 0),
-                  width: 570.0,
-                  child: new TextField(
-                    decoration: InputDecoration(
-                      labelText: "Profile Name: ",
-                      labelStyle: TextStyle(
-                        decoration: TextDecoration.none,
-                        fontFamily: 'FiraSans',
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                  child: new Row(
+                    children: [
+                      Container(
+                        padding:
+                            const EdgeInsets.fromLTRB(43.0, 10.0, 0.0, 10.0),
+                        width: 200.0,
+                        child: new TextField(
+                          onChanged: (text) {
+                            storeText(text);
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Item: ",
+                            labelStyle: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'FiraSans',
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                            border: InputBorder.none,
+                            fillColor: Color.fromRGBO(218, 226, 230, 1.0),
+                            filled: true,
+                          ),
+                        ),
                       ),
-                      border: InputBorder.none,
-                      fillColor: Color.fromRGBO(218, 226, 230, 1.0),
-                      filled: true,
-                    ),
+                      Container(
+                        padding:
+                            const EdgeInsets.fromLTRB(39.0, 10.0, 0.0, 10.0),
+                        width: 200.0,
+                        child: new TextField(
+                          decoration: InputDecoration(
+                            labelText: "Quantity: ",
+                            labelStyle: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'FiraSans',
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                            border: InputBorder.none,
+                            fillColor: Color.fromRGBO(218, 226, 230, 1.0),
+                            filled: true,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -108,8 +144,8 @@ class editmenu extends StatelessWidget {
       child: new Column(
         children: [
           Container(
-            alignment: Alignment.topLeft ,
-            height: 500.0,
+            alignment: Alignment.topLeft,
+            height: 530.0,
             width: 640.0,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -125,7 +161,7 @@ class editmenu extends StatelessWidget {
               children: [
                 Container(
                   padding: const EdgeInsets.fromLTRB(20, 25, 20, 0),
-                  alignment: Alignment(-0.9,0.2),
+                  alignment: Alignment(-0.9, 0.2),
                   child: new Text(
                     'Profile Information',
                     textAlign: TextAlign.left,
@@ -140,7 +176,7 @@ class editmenu extends StatelessWidget {
                 ),
                 Container(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-                  alignment: Alignment(-0.9,0.2),
+                  alignment: Alignment(-0.9, 0.2),
                   child: new Text(
                     'Enter details about your business here.',
                     style: TextStyle(
@@ -270,8 +306,7 @@ class editmenu extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
-              )
-          ),
+              )),
           Container(
             padding: const EdgeInsets.fromLTRB(0, 10, 20, 0),
             alignment: Alignment(-0.84, 0.2),
@@ -292,6 +327,28 @@ class editmenu extends StatelessWidget {
             endIndent: 92,
           ),
           bottomSection,
+          Container(
+            alignment: Alignment(0.9, -0.6),
+            padding: const EdgeInsets.fromLTRB(0, 10, 20, 0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(250, 70),
+                primary: Colors.white,
+                onPrimary: Colors.black,
+                textStyle: TextStyle(
+                  fontSize: 15.0,
+                  fontFamily: 'FiraSans',
+                ),
+              ),
+              child: Text("Save"),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => GeneratedOrderPageWidget()));
+              },
+            ),
+          ),
         ],
       ),
     );
