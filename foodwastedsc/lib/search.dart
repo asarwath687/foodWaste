@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:foodwastedsc/profilePage.dart';
 import 'package:foodwastedsc/signup.dart';

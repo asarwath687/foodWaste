@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:foodwastedsc/profilePage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'dart:html';
@@ -34,6 +35,12 @@ class SignUpPageWidget extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => editmenu()));
                 ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
               }),
+        ]);
+    MaterialBanner emailNope = new MaterialBanner(
+        content: Text("Invalid Email - Already In Use"),
+        backgroundColor: Colors.blueAccent.shade100,
+        actions: [
+          TextButton(child: Text(""), onPressed: () {}),
         ]);
     final centerBox = new Expanded(
       child: new Column(
@@ -218,7 +225,7 @@ class SignUpPageWidget extends StatelessWidget {
                 Padding(padding: EdgeInsets.all(5)),
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(
-                    backgroundColor: Colors.blueAccent,
+                    backgroundColor: Colors.amber,
                     minimumSize: Size(100, 50),
                     padding: EdgeInsets.all(10),
                   ),
@@ -234,14 +241,22 @@ class SignUpPageWidget extends StatelessWidget {
                       if (e.code == 'weak-password') {
                         print('The password provided is too weak.');
                       } else if (e.code == 'email-already-in-use') {
-                        print('The account already exists for that email.');
+                        ScaffoldMessenger.of(context)
+                            .showMaterialBanner(emailNope);
                       }
                     } catch (e) {
                       print(e);
                     }
                     ScaffoldMessenger.of(context).showMaterialBanner(myBanner);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => profilePage()),
+                    );
                   },
-                  child: Text('SIGN UP'),
+                  child: Text(
+                    'SIGN UP',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 )
               ],
             ),
