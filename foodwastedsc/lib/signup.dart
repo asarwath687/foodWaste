@@ -247,7 +247,6 @@ class SignUpPageWidget extends StatelessWidget {
                     } catch (e) {
                       print(e);
                     }
-                    ScaffoldMessenger.of(context).showMaterialBanner(myBanner);
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => profilePage()),

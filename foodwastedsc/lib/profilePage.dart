@@ -2,6 +2,7 @@ import 'dart:html';
 import 'dart:js_util';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:foodwastedsc/editmenu.dart';
 import 'signup.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -62,6 +63,7 @@ class profilePage extends StatelessWidget {
       child: new Column(
         children: [
           Container(
+            constraints: BoxConstraints(maxHeight: 100),
             alignment: Alignment(-0.7, 0.2),
             child: new Text(
               'Poke House',
